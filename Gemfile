@@ -57,3 +57,10 @@ group :development do
   # gem "spring"
 end
 
+# Manually added gems
+gem "rest-client", "~> 2.1"
+gem "awesome_print", "~> 1.9"
+gem "jsonapi-serializer", "~> 2.2"
+gem "devise", "~> 4.9"
+gem "finishing_moves", "~> 1.2"
+gem "react-rails", "~> 3.1"

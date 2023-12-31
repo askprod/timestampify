@@ -75,7 +75,13 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    awesome_print (1.9.2)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     bigdecimal (3.1.5)
     bindex (0.8.1)
     bootsnap (1.17.0)
@@ -88,11 +94,23 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    domain_name (0.6.20231109)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    execjs (2.9.1)
+    finishing_moves (1.2.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -106,6 +124,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -115,6 +135,9 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    mime-types (3.5.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2023.1205)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
@@ -128,6 +151,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
+    netrc (0.11.0)
     nio4r (2.7.0)
     nokogiri (1.16.0-aarch64-linux)
       racc (~> 1.4)
@@ -141,6 +165,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     psych (5.1.2)
       stringio
     puma (6.4.0)
@@ -186,8 +211,22 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    react-rails (3.1.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     reline (0.4.1)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     ruby2_keywords (0.0.5)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -206,6 +245,7 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.0)
     thor (1.3.0)
+    tilt (2.3.0)
     timeout (0.4.1)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
@@ -213,6 +253,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -233,12 +275,18 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  awesome_print (~> 1.9)
   bootsnap
   debug
+  devise (~> 4.9)
+  finishing_moves (~> 1.2)
   importmap-rails
   jbuilder
+  jsonapi-serializer (~> 2.2)
   puma (>= 5.0)
   rails (~> 7.1.2)
+  react-rails (~> 3.1)
+  rest-client (~> 2.1)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
